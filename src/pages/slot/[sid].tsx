@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router';
 import getAvailableWorkers from '../../services/available-workers';
-
+import WorkerCard from '../../components/worker-card';
 
 const Slot: NextPage = () => {
   const router = useRouter();
@@ -14,7 +14,6 @@ const Slot: NextPage = () => {
   useEffect(() => {
     if(sid) {
       getAvailableWorkers(parseInt(sid, 10)).then(result => {
-        console.log("Workers", result)
         if(!result) {
           return setQueryError(true)
         }
@@ -24,11 +23,13 @@ const Slot: NextPage = () => {
     }
   }, [sid]);
 
-  console.log("This is the slot Id", sid);
-
   return !queryError ? (
     <div>
-      Yep
+      <h1>Available workers for slot {sid}</h1>
+
+      {availableWorkers.map(worker => (
+        <WorkerCard worker={worker} key={worker.id} />
+      ))}
     </div>
   ): <h3>The slot with Slot ID {sid} does not exist</h3>
 }

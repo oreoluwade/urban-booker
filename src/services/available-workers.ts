@@ -1,4 +1,5 @@
 import axios from 'axios';
+import getWorkers from './workers';
 
 type Data = {
   id: number,
@@ -13,7 +14,13 @@ export default async function getAvailableWorkers(slot_id: number): Promise<any>
 
   const selectedSlotData = jsonData['available-workers'].find(worker => worker.slot_id === slot_id);
 
-  // Get List iof workers, then map to get theri details
+  if(selectedSlotData) {
+    const workerIds = selectedSlotData.availableWorker_ids;
 
-  return selectedSlotData ? selectedSlotData.availableWorker_ids : undefined;
+    const allWorkers = await getWorkers();
+
+    return allWorkers.filter(person => workerIds.includes(person.id))
+  }
+
+  return undefined
 }
