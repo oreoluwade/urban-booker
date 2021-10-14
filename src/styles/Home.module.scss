@@ -75,7 +75,9 @@
   justify-content: center;
   flex-wrap: wrap;
   max-width: 800px;
+  max-height: 60vh;
   margin-top: 3rem;
+  overflow: scroll;
 }
 
 .card {

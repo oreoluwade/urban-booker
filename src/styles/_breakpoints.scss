@@ -1,0 +1,23 @@
+/*
+** Suggested breakpoints
+** Usage:
+** @include media($large) { font-size: 12px; }
+*/
+
+
+$breakpoints: (
+  xsmall: 475px,
+  small: 640px,
+  medium: 768px,
+  large: 1024px,
+  xlarge: 1280px,
+  xxlarge: 1440px
+);
+
+$xxsmall: '<xsmall';
+$xsmall: '>=xsmall';
+$small: '>=small';
+$medium: '>=medium';
+$large: '>=large';
+$xlarge: '>=xlarge';
+$xxlarge: '>=xxlarge';
