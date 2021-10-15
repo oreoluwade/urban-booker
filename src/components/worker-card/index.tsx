@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext } from 'react';
 import Image from 'next/image';
 import { WorkerType } from '../../types/Worker';
 import Rating from '../rating';
@@ -7,12 +7,12 @@ import classes from './Worker-Card.module.scss';
 import { CartContext } from '../../contexts/CartContext';
 
 type WorkerProps = {
-  worker: WorkerType,
-  slotId: number
-}
+  worker: WorkerType;
+  slot_id: number;
+};
 
-const WorkerCard = ({ worker, slotId }: WorkerProps) => {
-  const { addToCart } = useContext(CartContext)
+const WorkerCard = ({ worker, slot_id }: WorkerProps) => {
+  const { addToCart } = useContext(CartContext);
 
   return (
     <div className={classes.root}>
@@ -23,14 +23,17 @@ const WorkerCard = ({ worker, slotId }: WorkerProps) => {
         <p>{worker.rating} of 5 stars</p>
       </div>
 
-
-      <button onClick={() => {
-        addToCart({ slotId, workerId: worker.id })
-      }} className={classes.cta} title="Add to cart">
-        <Image src="/plus.svg" width={32} height={32} alt="Add to cart icon"/>
+      <button
+        onClick={() => {
+          addToCart({ slot_id, worker_id: worker.id });
+        }}
+        className={classes.cta}
+        title="Add to cart"
+      >
+        <Image src="/plus.svg" width={32} height={32} alt="Add to cart icon" />
       </button>
     </div>
-  )
-}
+  );
+};
 
-export default WorkerCard
+export default WorkerCard;
