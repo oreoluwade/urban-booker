@@ -1,9 +1,14 @@
 import React from 'react'
+import { WorkerType } from '../../types/Worker';
 import Rating from '../rating';
 import Spacer from '../spacer';
 import classes from './Worker-Card.module.scss';
 
-const WorkerCard = ({ worker }) => {
+type WorkerProps = {
+  worker: WorkerType
+}
+
+const WorkerCard = ({ worker }: WorkerProps) => {
   return (
     <div className={classes.root}>
       <h2>{worker.name}</h2>

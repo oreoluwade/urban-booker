@@ -1,7 +1,11 @@
 import Image from 'next/image';
 import classes from './Rating.module.scss';
 
-const Rating = ({ value }) => {
+type RatingProps = {
+  value: string | number
+}
+
+const Rating = ({ value }: RatingProps): JSX.Element => {
   return (
     <>
       {(!value || value === 0) && (

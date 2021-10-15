@@ -1,0 +1,13 @@
+@import "src/styles/imports";
+
+.root {
+  display: flex;
+  width: 90%;
+  height: 60px;
+  position: fixed;
+  justify-content: space-between;
+  margin: 0 auto;
+  background-color: $primary;
+  padding-left: 30px;
+  padding-right: 30px;
+}
