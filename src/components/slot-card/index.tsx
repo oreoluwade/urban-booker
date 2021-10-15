@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { SlotType } from '../../types/Slot';
 import classes from './Slot-Card.module.scss';
 
@@ -8,10 +9,12 @@ type SlotCardProps = {
 
 const SlotCard = ({ slot }: SlotCardProps): JSX.Element => {
   return (
-    <a className={classes.root} href={`/slot/${slot.id}`}>
-      <h2>Slot {slot.id}</h2>
-      <p>{slot.localisedTime}</p>
-    </a>
+    <Link href={`/slot/${slot.id}`}>
+      <a className={classes.root}>
+        <h2>Slot {slot.id}</h2>
+        <p>{slot.localisedTime}</p>
+      </a>
+    </Link>
   )
 }
 
