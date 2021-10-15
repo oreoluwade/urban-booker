@@ -26,16 +26,18 @@ const Slot: NextPage = () => {
     }
   }, [sid]);
 
+  const slotId = sid && typeof (+sid) === 'number' ? +sid : undefined;
+
   return (
     <Layout>
       {!queryError && <main className={classes.main}>
         <h1>Available workers for slot {sid}</h1>
 
-        <section className={classes.grid}>
+        {slotId && <section className={classes.grid}>
           {availableWorkers.map(worker => (
-            <WorkerCard worker={worker} key={worker.id} />
+            <WorkerCard worker={worker} key={worker.id} slotId={slotId}/>
           ))}
-        </section>
+        </section>}
       </main>}
 
       {queryError && <h3>The slot with Slot ID {sid} does not exist</h3>}

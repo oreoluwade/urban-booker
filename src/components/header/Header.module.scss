@@ -12,3 +12,23 @@
   padding-left: 30px;
   padding-right: 30px;
 }
+
+.cart {
+  &__link {
+    position: relative;
+  }
+
+  &__badge {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: $pink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    top: -7px;
+    left: 23px;
+  }
+}

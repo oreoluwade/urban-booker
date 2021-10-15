@@ -1,18 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Image from 'next/image';
 import { WorkerType } from '../../types/Worker';
 import Rating from '../rating';
 import Spacer from '../spacer';
 import classes from './Worker-Card.module.scss';
+import { CartContext } from '../../contexts/CartContext';
 
 type WorkerProps = {
-  worker: WorkerType
+  worker: WorkerType,
+  slotId: number
 }
 
-const WorkerCard = ({ worker }: WorkerProps) => {
-  const addToCart = () => {
-    // Context API function to add
-  }
+const WorkerCard = ({ worker, slotId }: WorkerProps) => {
+  const { addToCart } = useContext(CartContext)
 
   return (
     <div className={classes.root}>
@@ -24,7 +24,9 @@ const WorkerCard = ({ worker }: WorkerProps) => {
       </div>
 
 
-      <button onClick={addToCart} className={classes.cta} title="Add to cart">
+      <button onClick={() => {
+        addToCart({ slotId, workerId: worker.id })
+      }} className={classes.cta} title="Add to cart">
         <Image src="/plus.svg" width={32} height={32} alt="Add to cart icon"/>
       </button>
     </div>
