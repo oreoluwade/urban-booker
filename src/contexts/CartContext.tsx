@@ -5,11 +5,11 @@ type CartContextProviderProps = {
   children: React.ReactNode;
 };
 
-interface ContextInterface {
+type ContextInterface = {
   cartItems: CartItemType[];
   addToCart: (...args: any[]) => void;
   removeFromCart: (identifier: number) => void;
-}
+};
 
 // Create Context Object
 export const CartContext = createContext<ContextInterface | null>({

@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
+import Image from 'next/image';
 import { CartContext } from '../../contexts/CartContext';
 import classes from './Cart-Card.module.scss';
+import Spacer from '../spacer';
 
 type CartCardProps = {
   worker_id: number;
@@ -15,23 +17,27 @@ const CartCard = ({
 }: CartCardProps): JSX.Element => {
   const { removeFromCart } = useContext(CartContext);
 
-  console.log('In cart', worker_id, slot_id);
-
   return (
     <div className={classes.root}>
       <span>
         <h2>Slot {slot_id}</h2>
-        <p>Worker {worker_id}</p>
+        <Spacer width={30} />
+        <p>Handled by Worker {worker_id}</p>
       </span>
 
       <button
-        className={classes.button__remove}
+        className={classes.button}
         title="Remove item"
         onClick={() => {
           removeFromCart(identifier);
         }}
       >
-        <span className={classes.line} />
+        <Image
+          src="/close-white.svg"
+          width={24}
+          height={24}
+          alt="Remove item from basket"
+        />
       </button>
     </div>
   );

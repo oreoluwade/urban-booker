@@ -23,7 +23,7 @@ const Cart = () => {
             )
           )
         ) : (
-          <h2>No items added yet</h2>
+          <h2>No items currently in basket</h2>
         )}
       </main>
     </Layout>
