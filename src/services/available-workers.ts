@@ -1,26 +1,24 @@
 import axios from 'axios';
+import { Worker, AvailableWorker, AvailableWorkersServiceResponse } from '../types';
 import getWorkers from './workers';
 
-type Data = {
-  id: number,
-  name: string,
-  rating: string,
-  isNew: boolean
-}[]
+export default async function getAvailableWorkers(slot_id: number): Promise<Worker[] | undefined> {
+  try {
+    const response = await axios.get<AvailableWorkersServiceResponse>("https://storage.googleapis.com/urban-technical/available-workers.json");
 
-export default async function getAvailableWorkers(slot_id: number): Promise<any> {
-  const response = await axios.get("https://storage.googleapis.com/urban-technical/available-workers.json");
-  const jsonData = await response.data;
+    const selectedSlotData = response.data['available-workers'].find((worker: AvailableWorker) => worker.slot_id === slot_id);
 
-  const selectedSlotData = jsonData['available-workers'].find(worker => worker.slot_id === slot_id);
-
-  if(selectedSlotData) {
+    if(!selectedSlotData) {
+      return;
+    }
     const workerIds = selectedSlotData.availableWorker_ids;
 
-    const allWorkers = await getWorkers();
+    const allWorkers: Worker[] = await getWorkers();
 
-    return allWorkers.filter(person => workerIds.includes(person.id))
+    return allWorkers.filter(worker => workerIds.includes(worker.id))
+
+  } catch (error) {
+    throw error
   }
 
-  return undefined
 }

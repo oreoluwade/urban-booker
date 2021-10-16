@@ -1,15 +1,13 @@
 import axios from 'axios';
+import { Worker, WorkersServiceResponse } from '../types';
 
-type Data = {
-  id: number,
-  name: string,
-  rating: string,
-  isNew: boolean
-}[]
+export default async function getWorkers(): Promise<Worker[]> {
+  try {
+    const response = await axios.get<WorkersServiceResponse>("https://storage.googleapis.com/urban-technical/workers.json");
 
-export default async function getWorkers(): Promise<Data> {
-  const response = await axios.get("https://storage.googleapis.com/urban-technical/workers.json");
-  const jsonData = await response.data;
+    return response.data.workers
+  } catch (error) {
+    throw error;
+  }
 
-  return jsonData.workers
 }
