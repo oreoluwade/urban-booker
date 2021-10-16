@@ -1,12 +1,12 @@
 import React, { useState, createContext } from 'react';
-import { CartItemType } from '../types/CartItem';
+import { CartItem } from '../types';
 
 type CartContextProviderProps = {
   children: React.ReactNode;
 };
 
 type CartContextType = {
-  cartItems: CartItemType[];
+  cartItems: CartItem[];
   addToCart: (...args: any[]) => void;
   removeFromCart: (identifier: number) => void;
 };
@@ -22,9 +22,9 @@ export const CartContext = createContext<CartContextType>({
 export const CartContextProvider = (
   props: CartContextProviderProps
 ): JSX.Element => {
-  const [cartItems, setCartItems] = useState<CartItemType[]>([]);
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
-  const addToCart = ({ slot_id, worker_id }: CartItemType) => {
+  const addToCart = ({ slot_id, worker_id }: CartItem) => {
     const itemAlreadyInCart = cartItems.find(
       item => item.slot_id === slot_id && item.worker_id === worker_id
     );
