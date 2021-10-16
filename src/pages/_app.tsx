@@ -1,6 +1,7 @@
-import '../styles/globals.scss'
-import type { AppProps } from 'next/app'
-import { CartContextProvider } from '../contexts/CartContext'
+import React from 'react';
+import '../styles/globals.scss';
+import type { AppProps } from 'next/app';
+import { CartContextProvider } from '../contexts/CartContext';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -9,4 +10,4 @@ function MyApp({ Component, pageProps }: AppProps) {
     </CartContextProvider>
   );
 }
-export default MyApp
+export default MyApp;
