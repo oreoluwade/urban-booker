@@ -16,7 +16,7 @@ export type AvailableWorker = {
   availableWorker_ids: number[]
 }
 
-export type CartItemType = {
+export type CartItem = {
   slot_id: number,
   worker_id: number
 }

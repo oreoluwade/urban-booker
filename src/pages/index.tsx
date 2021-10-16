@@ -4,11 +4,11 @@ import { useEffect, useState } from 'react';
 import styles from '../styles/Home.module.scss';
 import getSlots from '../services/slots';
 import SlotCard from '../components/slot-card';
-import { SlotType } from '../types/Slot';
+import { Slot } from '../types';
 import Layout from '../components/layout';
 
 const Home: NextPage = () => {
-  const [slots, setSlots] = useState<SlotType[]>([]);
+  const [slots, setSlots] = useState<Slot[]>([]);
 
   useEffect(() => {
     getSlots().then(result => {

@@ -5,13 +5,13 @@ import getAvailableWorkers from '../../services/available-workers';
 import WorkerCard from '../../components/worker-card';
 import Layout from '../../components/layout';
 import classes from './Slot.module.scss';
-import { WorkerType } from '../../types/Worker';
+import { Worker } from '../../types';
 
 const Slot: NextPage = () => {
   const router = useRouter();
   const { sid } = router.query;
 
-  const [availableWorkers, setAvailableWorkers] = useState<WorkerType[]>([]);
+  const [availableWorkers, setAvailableWorkers] = useState<Worker[]>([]);
   const [queryError, setQueryError] = useState(false);
 
   useEffect(() => {

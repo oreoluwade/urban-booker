@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
 import Image from 'next/image';
-import { WorkerType } from '../../types/Worker';
+import { Worker } from '../../types';
 import Rating from '../rating';
 import Spacer from '../spacer';
 import classes from './Worker-Card.module.scss';
 import { CartContext } from '../../contexts/CartContext';
 
 type WorkerProps = {
-  worker: WorkerType;
+  worker: Worker;
   slot_id: number;
 };
 
