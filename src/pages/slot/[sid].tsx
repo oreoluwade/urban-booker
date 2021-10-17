@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import getAvailableWorkers from '../../services/available-workers';
+import { getAvailableWorkers } from '../../services';
 import WorkerCard from '../../components/worker-card';
 import Layout from '../../components/layout';
 import classes from './Slot.module.scss';
@@ -16,14 +16,23 @@ const Slot: NextPage = () => {
 
   useEffect(() => {
     if (sid) {
-      getAvailableWorkers(+sid).then(result => {
-        if (!result) {
-          return setQueryError(true);
-        }
-        setQueryError(false);
-        setAvailableWorkers(result);
-      });
+      getAvailableWorkers(+sid)
+        .then(result => {
+          if (!result) {
+            return setQueryError(true);
+          }
+          setQueryError(false);
+          setAvailableWorkers(result);
+        })
+        .catch(err => {
+          setAvailableWorkers([]);
+          setQueryError(true);
+        });
     }
+    return () => {
+      setAvailableWorkers([]);
+      setQueryError(false);
+    };
   }, [sid]);
 
   const slotId = sid && typeof +sid === 'number' ? +sid : undefined;
@@ -44,7 +53,11 @@ const Slot: NextPage = () => {
         </main>
       )}
 
-      {queryError && <h3>The slot with Slot ID {sid} does not exist</h3>}
+      {queryError && (
+        <main className={classes.main}>
+          <h3>The slot with Slot ID {sid} does not exist</h3>
+        </main>
+      )}
     </Layout>
   );
 };

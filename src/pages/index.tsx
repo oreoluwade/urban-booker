@@ -2,7 +2,7 @@ import React from 'react';
 import type { NextPage } from 'next';
 import { useEffect, useState } from 'react';
 import styles from '../styles/Home.module.scss';
-import getSlots from '../services/slots';
+import { getSlots } from '../services';
 import SlotCard from '../components/slot-card';
 import { Slot } from '../types';
 import Layout from '../components/layout';
