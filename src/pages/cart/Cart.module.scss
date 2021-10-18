@@ -6,3 +6,8 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.link {
+  color: $primary;
+  text-decoration: underline;
+}

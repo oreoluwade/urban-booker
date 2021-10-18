@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import Link from 'next/link';
 import CartCard from '../../components/cart-card';
 import Layout from '../../components/layout';
 import { CartContext } from '../../contexts/CartContext';
@@ -23,7 +24,14 @@ const Cart = () => {
             )
           )
         ) : (
-          <h2>No items currently in basket</h2>
+          <div>
+            <h1>No items currently in basket</h1>
+            <Link href="/">
+              <a data-cy="cart_navigate_home" className={classes.link}>
+                View available slots
+              </a>
+            </Link>
+          </div>
         )}
       </main>
     </Layout>
