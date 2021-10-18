@@ -15,7 +15,7 @@ const WorkerCard = ({ worker, slot_id }: WorkerProps) => {
   const { addToCart } = useContext(CartContext);
 
   return (
-    <div className={classes.root}>
+    <article className={classes.root}>
       <h2>{worker.name}</h2>
       <Spacer width={50} />
       <span className={classes.rating__group}>
@@ -30,10 +30,11 @@ const WorkerCard = ({ worker, slot_id }: WorkerProps) => {
         className={classes.cta}
         title="Add to cart"
         data-cy={`worker_${worker.id}`}
+        aria-label="Add Item Button"
       >
         <Image src="/plus.svg" width={32} height={32} alt="Add to cart icon" />
       </button>
-    </div>
+    </article>
   );
 };
 

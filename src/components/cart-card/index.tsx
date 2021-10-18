@@ -18,7 +18,7 @@ const CartCard = ({
   const { removeFromCart } = useContext(CartContext);
 
   return (
-    <div className={classes.root}>
+    <article className={classes.root}>
       <span>
         <h2>Slot {slot_id}</h2>
         <Spacer width={30} />
@@ -32,6 +32,7 @@ const CartCard = ({
           removeFromCart(identifier);
         }}
         data-cy={`remove_item_${identifier}`}
+        aria-label="Remove Item Button"
       >
         <Image
           src="/close-white.svg"
@@ -40,7 +41,7 @@ const CartCard = ({
           alt="Remove item from basket"
         />
       </button>
-    </div>
+    </article>
   );
 };
 
