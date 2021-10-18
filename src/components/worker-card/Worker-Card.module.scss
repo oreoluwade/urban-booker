@@ -10,6 +10,7 @@
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
   width: 500px;
+  height: 120px;
   display: flex;
   position: relative;
 }
@@ -36,5 +37,13 @@
 @media (max-width: 600px) {
   .root {
     width: 100%;
+    padding: 10px;
+    flex-direction: column;
+
+    h2 {
+      font-size: 20px;
+      margin: 0;
+      margin-bottom: 12px;
+    }
   }
 }

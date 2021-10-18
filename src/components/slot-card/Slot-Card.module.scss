@@ -2,14 +2,14 @@
 
 .root {
   margin: 1rem;
-  padding: 1.5rem;
+  padding: 20px;
   text-align: left;
   color: inherit;
   text-decoration: none;
   border: 1px solid $primary;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
-  width: 150px;
+  width: 300px;
 
   span {
     display: flex;
@@ -27,4 +27,25 @@
   color: $green;
   font-weight: 600;
   margin-left: 10px;
+}
+
+.link {
+  height: 35px;
+  border: none;
+  width: 100%;
+  background-color: $primary;
+  color: $white;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+@media (max-width: 300px) {
+  .root {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .link {
+    font-size: 8px;
+  }
 }

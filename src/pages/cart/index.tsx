@@ -24,14 +24,14 @@ const Cart = () => {
             )
           )
         ) : (
-          <div>
+          <section>
             <h1>No items currently in basket</h1>
             <Link href="/">
               <a data-cy="cart_navigate_home" className={classes.link}>
                 View available slots
               </a>
             </Link>
-          </div>
+          </section>
         )}
       </main>
     </Layout>

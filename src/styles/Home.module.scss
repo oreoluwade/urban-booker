@@ -36,8 +36,15 @@
 }
 
 @media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
+  .title {
+    font-size: 2rem;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .description {
+    font-size: 1rem;
+    max-width: 80%;
+    margin: 30px auto 0px auto;
   }
 }

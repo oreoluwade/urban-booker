@@ -18,10 +18,10 @@ const WorkerCard = ({ worker, slot_id }: WorkerProps) => {
     <div className={classes.root}>
       <h2>{worker.name}</h2>
       <Spacer width={50} />
-      <div className={classes.rating__group}>
+      <span className={classes.rating__group}>
         <Rating value={worker.rating} />
         <p>{worker.rating} of 5 stars</p>
-      </div>
+      </span>
 
       <button
         onClick={() => {
