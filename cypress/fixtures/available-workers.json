@@ -1,0 +1,69 @@
+{
+  "available-workers": [
+    {
+      "slot_id": 1,
+      "availableWorker_ids": [
+        1,
+        2,
+        7
+      ]
+    },
+    {
+      "slot_id": 2,
+      "availableWorker_ids": [
+        4,
+        8,
+        10
+      ]
+    },
+    {
+      "slot_id": 3,
+      "availableWorker_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "slot_id": 4,
+      "availableWorker_ids": [
+        3,
+        5,
+        9
+      ]
+    },
+    {
+      "slot_id": 5,
+      "availableWorker_ids": [
+        6
+      ]
+    },
+    {
+      "slot_id": 6,
+      "availableWorker_ids": [
+        1,
+        3,
+        5,
+        7,
+        9
+      ]
+    },
+    {
+      "slot_id": 7,
+      "availableWorker_ids": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ]
+    }
+  ]
+}

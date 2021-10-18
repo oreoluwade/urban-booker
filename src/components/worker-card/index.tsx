@@ -29,6 +29,7 @@ const WorkerCard = ({ worker, slot_id }: WorkerProps) => {
         }}
         className={classes.cta}
         title="Add to cart"
+        data-cy={`worker_${worker.id}`}
       >
         <Image src="/plus.svg" width={32} height={32} alt="Add to cart icon" />
       </button>

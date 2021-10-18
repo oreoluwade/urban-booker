@@ -1,0 +1,64 @@
+{
+  "workers": [
+    {
+      "id": 1,
+      "name": "Johan Rice",
+      "rating": "4.1",
+      "isNew": false
+    },
+    {
+      "id": 2,
+      "name": "Maximillian Hause",
+      "rating": "4.6",
+      "isNew": true
+    },
+    {
+      "id": 3,
+      "name": "Jody Reese",
+      "rating": "2.5",
+      "isNew": false
+    },
+    {
+      "id": 4,
+      "name": "Keifer Leal",
+      "rating": "5",
+      "isNew": false
+    },
+    {
+      "id": 5,
+      "name": "Ifan Almeida",
+      "rating": "3.7",
+      "isNew": true
+    },
+    {
+      "id": 6,
+      "name": "Tony Tetuilla",
+      "rating": "4.3",
+      "isNew": true
+    },
+    {
+      "id": 7,
+      "name": "Osama Bush",
+      "rating": "5",
+      "isNew": false
+    },
+    {
+      "id": 8,
+      "name": "Obama Campbell",
+      "rating": "2.6",
+      "isNew": false
+    },
+    {
+      "id": 9,
+      "name": "Yohann Bolt",
+      "rating": "4.3",
+      "isNew": true
+    },
+    {
+      "id": 10,
+      "name": "Tiger Fury",
+      "rating": "4.9",
+      "isNew": false
+    }
+  ]
+}

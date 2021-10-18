@@ -37,10 +37,8 @@ async function getAvailableWorkers(slot_id: number): Promise<Worker[] | undefine
     return allWorkers.filter(worker => workerIds.includes(worker.id))
 
   } catch (error) {
-    console.log("=====", error)
     throw error
   }
-
 }
 
 export {

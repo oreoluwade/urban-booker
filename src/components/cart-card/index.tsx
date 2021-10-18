@@ -31,6 +31,7 @@ const CartCard = ({
         onClick={() => {
           removeFromCart(identifier);
         }}
+        data-cy={`remove_item_${identifier}`}
       >
         <Image
           src="/close-white.svg"
