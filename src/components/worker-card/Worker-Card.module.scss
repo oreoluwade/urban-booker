@@ -34,6 +34,21 @@
   cursor: pointer;
 }
 
+.in_cart_badge {
+  width: 70px;
+  height: 25px;
+  background-color: $green;
+  border-radius: 10px;
+  position: absolute;
+  right: 10px;
+  top: 2rem;
+  font-weight: bold;
+  color: $black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (max-width: 600px) {
   .root {
     width: 100%;
